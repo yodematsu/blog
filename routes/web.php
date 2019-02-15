@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
+    Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
+});
+
+Route::namespace('User')->prefix('user')->group(function(){
+    // Route::
 });
